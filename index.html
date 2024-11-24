@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Online</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <meta name="google-signin-client_id" content="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Cinema Online</div>
+            <div class="nav-controls">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Buscar filmes...">
+                    <button onclick="searchMovies()">Buscar</button>
+                </div>
+                <div class="auth-container">
+                    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                    <button id="signOutBtn" onclick="signOut()" style="display: none;">Sair</button>
+                    <span id="userEmail" style="display: none;"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="categories">
+            <button class="category-btn active" data-category="all">Todos</button>
+            <button class="category-btn" data-category="acao">Ação</button>
+            <button class="category-btn" data-category="comedia">Comédia</button>
+            <button class="category-btn" data-category="drama">Drama</button>
+            <button class="category-btn" data-category="terror">Terror</button>
+        </div>
+
+        <div id="movies-container" class="movies-grid"></div>
+    </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="player"></div>
+        </div>
+    </div>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
+</body>
+</html>
